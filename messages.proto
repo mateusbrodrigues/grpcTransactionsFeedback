@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "Messages";
+
+service MessageServices {
+    rpc GetMaxValueRealTime (stream SingleNumberMessage) returns (stream SingleResponseMessage);
+}
+
+message SingleNumberMessage {
+    int32 value = 1;
+}
+
+message SingleResponseMessage {
+    string resultado = 1; 
+    double saldoAtual = 2; 
+}
